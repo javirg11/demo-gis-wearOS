@@ -25,13 +25,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         AndroidGraphicFactory.createInstance(application)
-
         mapView = MapView(this)
-
-
         val layout = android.widget.FrameLayout(this)
 
-// Añades el mapa
         layout.addView(mapView)
 
         // FUNCIÓN para crear botón redondo
@@ -57,7 +53,6 @@ class MainActivity : ComponentActivity() {
 
             return button
         }
-
 
 // BOTÓN +
         val zoomIn = createCircleButton("+")
@@ -168,7 +163,7 @@ class MainActivity : ComponentActivity() {
         mapView.layerManager.layers.add(marker2)
 
         mapView.model.mapViewPosition.mapPosition =
-            MapPosition(LatLong(40.455, -3.475), 14.toByte()) // Madrid
+            MapPosition(LatLong(40.455, -3.475), 14.toByte()) // Tj
 
 
         //UBICACION
@@ -212,7 +207,7 @@ class MainActivity : ComponentActivity() {
                     mapView.layerManager.layers.add(marker)
                 }
 
-                // CENTRAR MAPA EN TU POSICIÓN
+                // CENTRAR MAPA
                 mapView.model.mapViewPosition.mapPosition =
                     MapPosition(latLong, 14.toByte())
             }
